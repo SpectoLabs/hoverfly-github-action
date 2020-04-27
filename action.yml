@@ -1,7 +1,9 @@
 ---
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
+name: 'Installs Hoverfly'
+description: >
+  Installs Hoverfly (https://docs.hoverfly.io),
+  so that other GitHub Actions can use it easily (e.g. for testing)
+author: 'John Boyes'
 inputs:
   myInput:
     description: 'Input to use'
