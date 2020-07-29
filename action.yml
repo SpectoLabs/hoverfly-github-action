@@ -13,3 +13,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.myInput }}
+branding:
+  icon: 'play'
+  color: 'blue'
