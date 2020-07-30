@@ -1,5 +1,5 @@
 ---
-project_name: label-checker
+project_name: hoverfly-github-action
 build:
   skip: true
 release:
