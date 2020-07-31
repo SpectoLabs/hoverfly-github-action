@@ -1,0 +1,32 @@
+{
+	"name": "Docker Container GitHub Action development",
+	"dockerFile": "Dockerfile",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+        "terminal.integrated.shell.linux": "/bin/zsh",
+        "workbench.colorTheme": "Default Dark+",
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"timonwong.shellcheck",
+		"ms-azuretools.vscode-docker",
+		"redhat.vscode-yaml"
+	]
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+    // "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+    
+    // Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+	// "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode"
+}
