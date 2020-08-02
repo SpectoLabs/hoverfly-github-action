@@ -5,14 +5,24 @@ description: >
   so that other GitHub Actions can use it easily (e.g. for testing)
 author: 'John Boyes'
 inputs:
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  version:
+    description: >
+      The Hoverfly version to install.
+      Can be any released Hoverfly version:
+      https://github.com/SpectoLabs/hoverfly/releases
+      Defaults to the latest version.
+    default: 'v1.3.0'
+    required: false
+  runner_github_workspace_path:
+    description: >
+      Always set this to be: `<dollarsign>{{ github.workspace}}`,
+      replacing <dollarsign> with $
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.myInput }}
+    - ${{ inputs.runner_github_workspace_path }}
 branding:
   icon: 'play'
   color: 'blue'
