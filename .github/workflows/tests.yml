@@ -1,0 +1,90 @@
+---
+name: Test
+on: push  # yamllint disable-line rule:truthy
+env:
+  ASSERT_VERSION: "| grep -q $HOVERFLY_VERSION"
+  ASSERT_HOVERFLY_NOT_INSTALLED: "! hoverfly -version"
+  ASSERT_HOVERCTL_NOT_INSTALLED: "! hoverctl version"
+
+jobs:
+
+
+  install_latest_version_by_default:
+    name: Install latest version by default
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Hoverfly
+        uses: ./
+        with:
+          runner_github_workspace_path: ${{ github.workspace }}
+      - name: Assert latest version installed
+        env:
+          HOVERFLY_VERSION: "v1.3.0"
+        run: |
+            hoverfly -version ${{ env.ASSERT_VERSION }}
+            hoverctl version  ${{ env.ASSERT_VERSION }}
+
+
+  install_specific_version:
+    name: Install specific version
+    runs-on: ubuntu-latest
+    env:
+      HOVERFLY_VERSION: v1.2.0
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Hoverfly
+        uses: ./
+        with:
+          version: ${{ env.HOVERFLY_VERSION }}
+          runner_github_workspace_path: ${{ github.workspace }}
+      - name: Assert latest version installed
+        run: |
+            hoverfly -version ${{ env.ASSERT_VERSION }}
+            hoverctl version  ${{ env.ASSERT_VERSION }}
+
+
+  install_fails_if_version_does_not_begin_with_v:
+    name: Install fails if version does not begin with v
+    runs-on: ubuntu-latest
+    env:
+      HOVERFLY_VERSION: "1.2.0"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Hoverfly
+        uses: ./
+        with:
+          version: ${{ env.HOVERFLY_VERSION }}
+          runner_github_workspace_path: ${{ github.workspace }}
+      - name: Assert Hoverfly not installed
+        run: |
+            ${{ env.ASSERT_HOVERFLY_NOT_INSTALLED }}
+            ${{ env.ASSERT_HOVERCTL_NOT_INSTALLED }}
+
+
+  install_fails_if_no_runner_github_workspace_path:
+    name: Install fails when no runner GitHub workspace path provided
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Hoverfly
+        uses: ./
+      - name: Assert Hoverfly not installed
+        run: |
+            ${{ env.ASSERT_HOVERFLY_NOT_INSTALLED }}
+            ${{ env.ASSERT_HOVERCTL_NOT_INSTALLED }}
+
+
+  install_fails_if_incorrect_runner_github_workspace_path:
+    name: Install fails when incorrect runner GitHub workspace path provided
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Hoverfly
+        uses: ./
+        with:  # Invalid runner_github_workspace_path (must be <dollarsign>{{ github.workspace}})
+          runner_github_workspace_path: /tmp
+      - name: Assert Hoverfly not installed
+        run: |
+            ${{ env.ASSERT_HOVERFLY_NOT_INSTALLED }}
+            ${{ env.ASSERT_HOVERCTL_NOT_INSTALLED }}
