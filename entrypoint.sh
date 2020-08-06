@@ -8,7 +8,13 @@ export HOVERFLY_VERSION=$INPUT_VERSION
 export HOVERFLY_BUNDLE=hoverfly_bundle_$HOVERFLY_PLATFORM
 export HOVERFLY_DOWNLOAD_URL=https://github.com/SpectoLabs/hoverfly/releases/download/
 
+
 mkdir -p "$CONTAINER_HOVERFLY_INSTALL_PATH"
+
+# make the script that enables https calls to be simulated accessible to the consumer
+install -m 755 /install-and-trust-hoverfly-default-cert.sh "$CONTAINER_HOVERFLY_INSTALL_PATH"
+
+
 mkdir -p /tmp/hoverfly
 cd /tmp/hoverfly || exit
 
