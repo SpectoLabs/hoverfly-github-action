@@ -1,5 +1,6 @@
 # Hoverfly GitHub Action
 
+[![tests](https://github.com/agilepathway/hoverfly-github-action/workflows/Test/badge.svg?branch=main&event=push)](https://github.com/agilepathway/hoverfly-github-action/actions?query=workflow%3ATest+event%3Apush+branch%3Amain)
 [![reviewdog](https://github.com/agilepathway/hoverfly-github-action/workflows/reviewdog/badge.svg?branch=main&event=push)](https://github.com/agilepathway/hoverfly-github-action/actions?query=workflow%3Areviewdog+event%3Apush+branch%3Amain)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=43200)](LICENSE)
 
@@ -98,6 +99,10 @@ This is so that the Hoverfly binaries are added to the path properly.
 The Hoverfly binaries are installed at `${{ github.workspace }}/bin`
 
 (The [GitHub workspace directory is persistent throughout the GitHub Action workflow](https://docs.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners#filesystems-on-github-hosted-runners), which means that the binaries are available to any subsequent workflow steps.)
+
+## Tests / examples
+
+The [tests](.github/workflows/tests.yml) contain further configuration examples.
 
 
 ## Suggestions / bug reports / contributions
