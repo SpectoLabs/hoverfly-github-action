@@ -100,6 +100,36 @@ The Hoverfly binaries are installed at `${{ github.workspace }}/bin`
 
 (The [GitHub workspace directory is persistent throughout the GitHub Action workflow](https://docs.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners#filesystems-on-github-hosted-runners), which means that the binaries are available to any subsequent workflow steps.)
 
+
+## Enabling HTTPS Hoverfly simulations
+
+To enable [HTTPS Hoverfly simulations](https://docs.hoverfly.io/en/latest/pages/tutorials/basic/https/https.html), follow this example:
+
+```
+  steps:
+    - name: Install Hoverfly
+      uses: agilepathway/hoverfly-github-action@main
+      with:
+        version: v1.3.0
+        runner_github_workspace_path: ${{ github.workspace }}
+      - name: Enable https calls to be simulated by Hoverfly
+        run: install-and-trust-hoverfly-default-cert.sh
+```
+
+This script 
+[installs and trusts the default Hoverfly certificate](https://docs.hoverfly.io/en/latest/pages/tutorials/advanced/configuressl/configuressl.html),
+after which you can go ahead and simulate HTTPS calls (see 
+[this example](https://github.com/agilepathway/hoverfly-github-action/blob/a0a08dae5c28d0980205c7997ce4accc20d1fc48/.github/workflows/tests.yml#L95-L113) 
+in the [end-to-end tests](.github/workflows/tests.yml)).
+
+Our Hoverfly GitHub Action automatically makes this https cert
+[install script](./install-and-trust-hoverfly-default-cert.sh) available to you
+(in the same `${{ github.workspace }}/bin` directory which we add to the path and which the
+Hoverfly binaries are located in too).
+
+
+
+
 ## Tests / examples
 
 The [tests](.github/workflows/tests.yml) contain further configuration examples.
