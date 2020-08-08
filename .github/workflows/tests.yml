@@ -5,6 +5,8 @@ env:
   ASSERT_VERSION: "| grep -q $HOVERFLY_VERSION"
   ASSERT_HOVERFLY_NOT_INSTALLED: "! hoverfly -version"
   ASSERT_HOVERCTL_NOT_INSTALLED: "! hoverctl version"
+  ASSERT_ERROR: "!"
+  EXAMPLE_HTTPS_PROXY_REQUEST: "curl --proxy localhost:8500 https://example.com"
 
 jobs:
 
@@ -88,3 +90,44 @@ jobs:
         run: |
             ${{ env.ASSERT_HOVERFLY_NOT_INSTALLED }}
             ${{ env.ASSERT_HOVERCTL_NOT_INSTALLED }}
+
+
+  use_script_to_enable_https_simulations:
+    name: Enable https simulations
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Hoverfly
+        uses: ./
+        with:
+          runner_github_workspace_path: ${{ github.workspace }}
+      - name: Enable https calls to be simulated by Hoverfly
+        run: install-and-trust-hoverfly-default-cert.sh
+      - name: Verify that https calls can be simulated
+        run: |
+            hoverctl start
+            hoverctl mode capture
+            ${{ env.EXAMPLE_HTTPS_PROXY_REQUEST }}
+            hoverctl mode simulate
+            ${{ env.EXAMPLE_HTTPS_PROXY_REQUEST }}
+            hoverctl stop
+
+
+  https_simulations_do_not_work_without_https_script:
+    name: Verify https simulations will not work without script
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Hoverfly
+        uses: ./
+        with:
+          runner_github_workspace_path: ${{ github.workspace }}
+      # Commenting out the script, to verify https simulations fail without it
+      # - name: Enable https calls to be simulated by Hoverfly
+      #   run: install-and-trust-hoverfly-default-cert.sh
+      - name: Verify that https calls cannot be simulated
+        run: |
+            hoverctl start
+            hoverctl mode capture
+            ${{env.ASSERT_ERROR }} ${{ env.EXAMPLE_HTTPS_PROXY_REQUEST }}
+            hoverctl stop
