@@ -15,7 +15,7 @@ jobs:
     name: Install latest version by default
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.2
       - name: Install Hoverfly
         uses: ./
         with:
@@ -34,7 +34,7 @@ jobs:
     env:
       HOVERFLY_VERSION: v1.2.0
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.2
       - name: Install Hoverfly
         uses: ./
         with:
@@ -52,7 +52,7 @@ jobs:
     env:
       HOVERFLY_VERSION: "1.2.0"
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.2
       - name: Install Hoverfly
         uses: ./
         with:
@@ -68,7 +68,7 @@ jobs:
     name: Install fails when no runner GitHub workspace path provided
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.2
       - name: Install Hoverfly
         uses: ./
       - name: Assert Hoverfly not installed
@@ -81,7 +81,7 @@ jobs:
     name: Install fails when incorrect runner GitHub workspace path provided
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.2
       - name: Install Hoverfly
         uses: ./
         with:  # Invalid runner_github_workspace_path (must be <dollarsign>{{ github.workspace}})
@@ -96,7 +96,7 @@ jobs:
     name: Enable https simulations
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.2
       - name: Install Hoverfly
         uses: ./
         with:
@@ -117,7 +117,7 @@ jobs:
     name: Verify https simulations will not work without script
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.2
       - name: Install Hoverfly
         uses: ./
         with:
