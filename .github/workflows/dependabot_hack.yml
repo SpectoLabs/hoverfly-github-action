@@ -1,0 +1,14 @@
+---
+name: Dependabot hack
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - never-trigger-this-dependabot-hack-workflow
+
+jobs:
+
+  dependabot_hack:
+    name: Ensure dependabot version checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: agilepathway/label-checker:v1.0.8
