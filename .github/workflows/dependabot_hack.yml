@@ -11,5 +11,5 @@ jobs:
     name: Ensure dependabot version checks
     runs-on: ubuntu-latest
     steps:
-      - uses: agilepathway/label-checker:v1.0.8
-      - uses: koalaman/shellcheck:v0.7.0
+      - uses: agilepathway/label-checker@v1.0.8
+      - uses: koalaman/shellcheck@v0.7.0
