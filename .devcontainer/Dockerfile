@@ -7,7 +7,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
 
 
 ARG GIT_EDITOR_SCRIPT_SOURCE="https://raw.githubusercontent.com/microsoft/vscode-dev-containers/master/containers/codespaces-linux/.devcontainer/git-ed.sh"
-ARG SHELLCHECK_VERSION="v0.7.1"
+ARG SHELLCHECK_VERSION="v0.7.0"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3008
 RUN apt-get update \
