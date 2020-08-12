@@ -9,11 +9,10 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
 ARG GIT_EDITOR_SCRIPT_SOURCE="https://raw.githubusercontent.com/microsoft/vscode-dev-containers/master/containers/codespaces-linux/.devcontainer/git-ed.sh"
 ARG SHELLCHECK_VERSION="v0.7.1"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-# hadolint ignore=DL3008
 RUN apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
 # Install xz-utils to extract tarballs
-    && apt-get -y install --no-install-recommends xz-utils \
+    && apt-get -y install --no-install-recommends xz-utils=5.2.4-1 \
 # Install shellcheck (apt-get doesn't install the latest version needed by VS code, so installing from GitHub release, see:
 # https://askubuntu.com/a/1228181)
     && mkdir -p /tmp/shellcheck \
