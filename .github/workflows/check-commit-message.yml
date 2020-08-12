@@ -8,10 +8,10 @@ on:  # yamllint disable-line rule:truthy
       - reopened
       - synchronize
     branches-ignore:
-      - '*dependabot/github_actions/*'
+      - '*dependabot/github_actions/**'
   push:
     branches-ignore:
-      - '*dependabot/github_actions/*'
+      - '*dependabot/github_actions/**'
 
 jobs:
   check-commit-message-style:
