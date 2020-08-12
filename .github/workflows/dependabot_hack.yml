@@ -20,7 +20,7 @@ jobs:
 
       # update the version in `check_semver_labels.yml` manually, too
       # (eventually Dependabot will do this automatically and I won't need this hack)
-      - uses: agilepathway/label-checker@v1.0.8
+      - uses: agilepathway/label-checker@v1.0.9
 
       # update the version in the devcontainer `Dockerfile` manually, too
       - uses: koalaman/shellcheck@v0.7.0
