@@ -110,7 +110,6 @@ To enable [HTTPS Hoverfly simulations](https://docs.hoverfly.io/en/latest/pages/
     - name: Install Hoverfly
       uses: agilepathway/hoverfly-github-action@main
       with:
-        version: v1.3.0
         runner_github_workspace_path: ${{ github.workspace }}
       - name: Enable https calls to be simulated by Hoverfly
         run: install-and-trust-hoverfly-default-cert.sh
@@ -123,7 +122,7 @@ after which you can go ahead and simulate HTTPS calls (see
 in the [end-to-end tests](.github/workflows/tests.yml)).
 
 Our Hoverfly GitHub Action automatically makes this https cert
-[install script](./install-and-trust-hoverfly-default-cert.sh) available to you
+[install script](./install-and-trust-hoverfly-default-cert.sh) available
 (in the same `${{ github.workspace }}/bin` directory which we add to the path and which the
 Hoverfly binaries are located in too).
 
