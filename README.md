@@ -141,3 +141,8 @@ The project is [open source](https://opensource.guide/how-to-contribute/) and al
 * [How to report a bug or suggest a new feature](CONTRIBUTING.md#how-to-report-a-bug-or-suggest-a-new-feature)
 
 * [How to make a contribution](CONTRIBUTING.md#how-to-make-a-contribution)
+
+
+## Updating dependencies
+
+See the [DEPENDENCIES.md](.github/DEPENDENCIES.md)
