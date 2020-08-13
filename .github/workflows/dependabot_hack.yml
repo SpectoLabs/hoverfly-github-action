@@ -9,7 +9,7 @@ jobs:
 
   dependabot_hack:
     name: Ensure dependabot version checks
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
 
       # update the version manually in these places, too:
