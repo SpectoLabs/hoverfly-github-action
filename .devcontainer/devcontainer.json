@@ -1,6 +1,14 @@
 {
 	"name": "Docker Container GitHub Action development",
-	"dockerFile": "Dockerfile",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick an Debian version: buster, stretch, or a version
+		// specific tag tied to a release in:
+		// https://github.com/microsoft/vscode-dev-containers/releases
+		// See also: 
+		// https://github.com/microsoft/vscode-dev-containers/tree/master/containers/debian#using-this-definition-with-an-existing-folder
+		"args": { "VARIANT": "0.123.0-buster" }
+	},
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 

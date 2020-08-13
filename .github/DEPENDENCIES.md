@@ -29,6 +29,22 @@ but that would be overkill for now.
 Eventually as Dependabot adds more features we may be able to remove this workaround.
 
 
+## Devcontainer base image version
+
+We always pin to the most specific ([patch-level](https://semver.org/)) version of the [devcontainer Docker base image](https://github.com/microsoft/vscode-dev-containers/tree/master/containers/debian#using-this-definition-with-an-existing-folder) that we can, to ensure that the devcontainer builds are always reproducible.  
+
+This is despite the general guidance from Microsoft for these images being to use ["the major release version of this tag to avoid breaking changes while still taking fixes and content additions as they land. e.g. `0-buster`"](https://hub.docker.com/_/microsoft-vscode-devcontainers?tab=description)
+
+The reason we are comfortable pinning to a specific patch-level version is that we still take fixes and content additions as they land, because we use Dependabot to keep us up to date (using the [above workaround](#workaround-for-other-dependencies)).
+
+NB when we manually update the version in the `devcontainer.json`, we need to be careful as the version format is
+e.g. `0.123.0-buster`, compared to `v0.123.0` in the [`dependabot_hack.yml`](workflows/dependabot_hack.yml)
+
+When the new version is a patch or minor level update, we don't bother to test manually that the new remote container works (before merging the Dependabot PR).  In the (hopefully rare) event that it doesn't, we can simply put in another PR to downgrade the version to one that does work.  
+
+For major version updates, we should test that the remote container works successfully before merging the Dependabot PR.  The most failsafe way to test this is to [open the Dependabot PR branch in a remote Visual Studio Code container](https://code.visualstudio.com/docs/remote/containers#_quick-start-open-a-git-repository-or-github-pr-in-an-isolated-container-volume).  Alternatively starting a new [Codespace](https://github.com/features/codespaces/) that points to the Dependabot PR branch should also be a valid test.
+
+
 ## Dockerfile dependencies
 
 We have [pinned the linux dependencies in the devcontainer Dockerfile](https://github.com/agilepathway/hoverfly-github-action/pull/46/files), but there is no mechanism to automatically update them, currently.  It looks like [it's on Dependabot's roadmap](https://github.com/dependabot/dependabot-core/issues/2129#issuecomment-511552345), so we have reminders every 6 months to 
