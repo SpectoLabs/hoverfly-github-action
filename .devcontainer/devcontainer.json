@@ -7,7 +7,7 @@
 		// https://github.com/microsoft/vscode-dev-containers/releases
 		// See also: 
 		// https://github.com/microsoft/vscode-dev-containers/tree/master/containers/debian#using-this-definition-with-an-existing-folder
-		"args": { "VARIANT": "0.123.0-buster" }
+		"args": { "VARIANT": "0.134.0-buster" }
 	},
 
 	// Set *default* container specific settings.json values on container create.
