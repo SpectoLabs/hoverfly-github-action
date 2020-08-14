@@ -31,4 +31,4 @@ jobs:
 
       # update the variant version in the devcontainer.json manually, too
       # (see ../DEPENDENCIES.md#devcontainer-base-image-version for more info )
-      - uses: microsoft/vscode-dev-containers@v0.123.0
+      - uses: microsoft/vscode-dev-containers@v0.134.0
