@@ -61,4 +61,4 @@ We have [pinned the linux dependencies in the devcontainer Dockerfile](https://g
 
 ## Ubuntu version
 
-[Ubuntu releases annually in April](https://wiki.ubuntu.com/Releases).  In 2020 the GitHub Actions team [supported the new version by mid June](https://github.com/actions/virtual-environments/issues/228#issuecomment-644065532), so we have an annual reminder for 1st July each year to see if we can upgrade.  We can find out [here](https://docs.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources).  When we do upgrade to the new version it involves e.g. for 2021, simply replacing every case of `ubuntu-20.04` with `ubuntu-21.04`.
+[Ubuntu releases annually in April](https://wiki.ubuntu.com/Releases).  In 2020 the GitHub Actions team [supported the new version by mid June](https://github.com/actions/virtual-environments/issues/228#issuecomment-644065532), so we have [an issue automatically created on for 15th July each year](https://github.com/agilepathway/hoverfly-github-action/pull/55) to prompt us to update. 
