@@ -14,3 +14,6 @@ In 2020 the GitHub Actions team [supported the April release for that year by mi
 We can find out if we can update yet [here](https://docs.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources).  
 
 When we do the update to the new version it involves e.g. for 2021, simply replacing every case of `ubuntu-20.04` with `ubuntu-21.04`.
+
+- [ ] when we have updated and merged the change to the main branch, [this search](https://github.com/agilepathway/hoverfly-github-action/search?q=20.04&unscoped_q=20.04) should return zero results (NB it may take 5 minutes before the search index will show the right results)
+- [ ] update this issue template so that it corresponds to the following year (e.g. in July 2021, replace all cases of `20.04` with `21.04`)
