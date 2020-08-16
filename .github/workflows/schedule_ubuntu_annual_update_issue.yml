@@ -21,6 +21,6 @@ jobs:
           assignees: "johnboyes"
           labels: "dependencies"
           # assignees & labels in the template are overridden by the values specified in this action
-          template: ".github/ISSUE_TEMPLATE/update-ubuntu-version-in-github-actions.md"
+          template: ".github/ISSUE_TEMPLATE/scheduled/update-ubuntu-version-in-github-actions.md"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
