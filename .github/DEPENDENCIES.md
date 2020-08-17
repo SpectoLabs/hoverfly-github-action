@@ -47,7 +47,7 @@ For major version updates, we should test that the remote container works succes
 
 ## Dockerfile dependencies
 
-We have [pinned the linux dependencies in the devcontainer Dockerfile](https://github.com/agilepathway/hoverfly-github-action/pull/46/files), but there is no mechanism to automatically update them, currently.  It looks like [it's on Dependabot's roadmap](https://github.com/dependabot/dependabot-core/issues/2129#issuecomment-511552345), so we have reminders every 6 months to 
+We have [pinned the linux dependencies in the devcontainer Dockerfile](https://github.com/agilepathway/hoverfly-github-action/pull/46/files), but there is no mechanism to automatically update them, currently.  It looks like [it's on Dependabot's roadmap](https://github.com/dependabot/dependabot-core/issues/2129#issuecomment-511552345), so we have [an issue automatically created every 6 months](https://github.com/agilepathway/hoverfly-github-action/pull/59) to 
 1. update the dependencies manually
 2. see if Dependabot now offer this functionality
 
