@@ -31,4 +31,4 @@ echo "Installed hoverfly and hoverctl"
 "$CONTAINER_HOVERFLY_INSTALL_PATH/hoverfly" -version
 "$CONTAINER_HOVERFLY_INSTALL_PATH/hoverctl" version
 
-echo "::add-path::$RUNNER_HOVERFLY_INSTALL_PATH"
+echo "$RUNNER_HOVERFLY_INSTALL_PATH" >> "$GITHUB_PATH"
