@@ -57,8 +57,3 @@ We have [pinned the linux dependencies in the devcontainer Dockerfile](https://g
 2. Execute the Dockerfile (e.g. if it's a remote container Dockerfile build the remote container)
 3. Run `apt-cache policy <package>` for each package, to see the version installed
 4. Pin all the versions, replacing any old versions with new ones
-
-
-## Ubuntu version
-
-[Ubuntu releases annually in April](https://wiki.ubuntu.com/Releases).  In 2020 the GitHub Actions team [supported the new version by mid June](https://github.com/actions/virtual-environments/issues/228#issuecomment-644065532), so we have [an issue automatically created on for 15th July each year](https://github.com/agilepathway/hoverfly-github-action/pull/55) to prompt us to update. 

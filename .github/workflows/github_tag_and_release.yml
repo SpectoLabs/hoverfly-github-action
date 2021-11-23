@@ -10,7 +10,7 @@ jobs:
 
   tag:
     name: Tag semantic version
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Tag
         uses: K-Phoen/semver-release-action@v1.3.1
@@ -23,7 +23,7 @@ jobs:
   release:
     needs: tag
     name: Create GitHub Release
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       -
         name: Checkout

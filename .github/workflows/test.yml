@@ -17,7 +17,7 @@ jobs:
 
   install_latest_version_by_default:
     name: Install latest version by default
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.2
       - name: Install Hoverfly
@@ -34,7 +34,7 @@ jobs:
 
   install_specific_version:
     name: Install specific version
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     env:
       HOVERFLY_VERSION: v1.2.0
     steps:
@@ -52,7 +52,7 @@ jobs:
 
   install_fails_if_version_does_not_begin_with_v:
     name: Install fails if version does not begin with v
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     env:
       HOVERFLY_VERSION: "1.2.0"
     steps:
@@ -70,7 +70,7 @@ jobs:
 
   install_fails_if_no_runner_github_workspace_path:
     name: Install fails when no runner GitHub workspace path provided
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.2
       - name: Install Hoverfly
@@ -83,7 +83,7 @@ jobs:
 
   install_fails_if_incorrect_runner_github_workspace_path:
     name: Install fails when incorrect runner GitHub workspace path provided
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.2
       - name: Install Hoverfly
@@ -98,7 +98,7 @@ jobs:
 
   use_script_to_enable_https_simulations:
     name: Enable https simulations
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.2
       - name: Install Hoverfly
@@ -119,7 +119,7 @@ jobs:
 
   https_simulations_do_not_work_without_https_script:
     name: Verify https simulations will not work without script
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.2
       - name: Install Hoverfly
