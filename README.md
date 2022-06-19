@@ -77,7 +77,7 @@ Example:
     - name: Install Hoverfly
       uses: agilepathway/hoverfly-github-action@main
       with:
-        version: v1.3.0
+        version: v1.3.6
         runner_github_workspace_path: ${{ github.workspace }}
 ```
 
