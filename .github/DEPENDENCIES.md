@@ -47,13 +47,7 @@ For major version updates, we should test that the remote container works succes
 
 ## Dockerfile dependencies
 
-We have [pinned the linux dependencies in the devcontainer Dockerfile](https://github.com/agilepathway/hoverfly-github-action/pull/46/files), but there is no mechanism to automatically update them, currently.  It looks like [it's on Dependabot's roadmap](https://github.com/dependabot/dependabot-core/issues/2129#issuecomment-511552345), so we have [an issue automatically created every 6 months](https://github.com/agilepathway/hoverfly-github-action/pull/59) to 
-1. update the dependencies manually
-2. see if Dependabot now offer this functionality
-
-### Updating the Dockerfile dependencies manually
-
-1. Temporarily unpin the versions (i.e. remove `=<version>` from each package in the Dockerfile)
-2. Execute the Dockerfile (e.g. if it's a remote container Dockerfile build the remote container)
-3. Run `apt-cache policy <package>` for each package, to see the version installed
-4. Pin all the versions, replacing any old versions with new ones
+We do not pin the linux apt-get dependencies in the devcontainer Dockerfile as
+[Dependabot currently does not support this](https://github.com/dependabot/dependabot-core/issues/2129), and also the
+risk of side effects due to an updated apt-get dependency in the devcontainer is very small indeed (and there's zero
+risk to production, as this is just in the devcontainer).
