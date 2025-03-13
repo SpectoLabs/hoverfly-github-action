@@ -1,7 +1,7 @@
 # Hoverfly GitHub Action
 
-[![tests](https://github.com/agilepathway/hoverfly-github-action/workflows/Test/badge.svg?branch=main&event=push)](https://github.com/agilepathway/hoverfly-github-action/actions?query=workflow%3ATest+event%3Apush+branch%3Amain)
-[![reviewdog](https://github.com/agilepathway/hoverfly-github-action/workflows/reviewdog/badge.svg?branch=main&event=push)](https://github.com/agilepathway/hoverfly-github-action/actions?query=workflow%3Areviewdog+event%3Apush+branch%3Amain)
+[![tests](https://github.com/SpectoLabs/hoverfly-github-action/workflows/Test/badge.svg?branch=main&event=push)](https://github.com/SpectoLabs/hoverfly-github-action/actions?query=workflow%3ATest+event%3Apush+branch%3Amain)
+[![reviewdog](https://github.com/SpectoLabs/hoverfly-github-action/workflows/reviewdog/badge.svg?branch=main&event=push)](https://github.com/SpectoLabs/hoverfly-github-action/actions?query=workflow%3Areviewdog+event%3Apush+branch%3Amain)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=43200)](LICENSE)
 
 **[GitHub Action](https://github.com/features/actions) that installs [Hoverfly](https://docs.hoverfly.io/), so that it can be used in subsequent steps in your GitHub Actions CI/CD pipeline (e.g. when running tests that use Hoverfly).**
@@ -53,7 +53,7 @@ jobs:
     - name: Checkout code
         uses: actions/checkout@v2
     - name: Install Hoverfly
-      uses: agilepathway/hoverfly-github-action@main
+      uses: SpectoLabs/hoverfly-github-action@main
       with:
         version: v1.10.12
         runner_github_workspace_path: ${{ github.workspace }}
@@ -76,7 +76,7 @@ Example:
 ```yml
   steps:
     - name: Install Hoverfly
-      uses: agilepathway/hoverfly-github-action@main
+      uses: SpectoLabs/hoverfly-github-action@main
       with:
         version: v1.3.6
         runner_github_workspace_path: ${{ github.workspace }}
@@ -107,7 +107,7 @@ To enable [HTTPS Hoverfly simulations](https://docs.hoverfly.io/en/latest/pages/
 ```yml
   steps:
     - name: Install Hoverfly
-      uses: agilepathway/hoverfly-github-action@main
+      uses: SpectoLabs/hoverfly-github-action@main
       with:
         runner_github_workspace_path: ${{ github.workspace }}
       - name: Enable https calls to be simulated by Hoverfly
@@ -117,7 +117,7 @@ To enable [HTTPS Hoverfly simulations](https://docs.hoverfly.io/en/latest/pages/
 This script
 [installs and trusts the default Hoverfly certificate](https://docs.hoverfly.io/en/latest/pages/tutorials/advanced/configuressl/configuressl.html),
 after which you can go ahead and simulate HTTPS calls (see
-[this example](https://github.com/agilepathway/hoverfly-github-action/blob/a0a08dae5c28d0980205c7997ce4accc20d1fc48/.github/workflows/tests.yml#L95-L113)
+[this example](https://github.com/SpectoLabs/hoverfly-github-action/blob/a0a08dae5c28d0980205c7997ce4accc20d1fc48/.github/workflows/tests.yml#L95-L113)
 in the [end-to-end tests](.github/workflows/tests.yml)).
 
 Our Hoverfly GitHub Action automatically makes this https cert
