@@ -1,7 +1,6 @@
 ---
 project_name: hoverfly-github-action
-build:
-  skip: true
+version: 2
 release:
   github:
   prerelease: auto
