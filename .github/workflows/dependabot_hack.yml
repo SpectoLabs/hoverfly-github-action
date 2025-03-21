@@ -16,8 +16,8 @@ jobs:
       # update the version manually in these places, too:
       #   - the default version in `action.yml`
       #   - the example version in the README
-      #   - the latest version in the 'tests.yml'
-      - uses: SpectoLabs/hoverfly@v1.3.6
+      #   - the latest version in the 'test.yml'
+      - uses: SpectoLabs/hoverfly@v1.10.13
 
       # update the version in `check_semver_labels.yml` manually, too
       # (eventually Dependabot will do this automatically and I won't need this hack)

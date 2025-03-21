@@ -32,7 +32,7 @@ jobs:
           runner_github_workspace_path: ${{ github.workspace }}
       - name: Assert latest version installed
         env:
-          HOVERFLY_VERSION: "v1.3.6"
+          HOVERFLY_VERSION: "v1.10.13"
         run: |
             hoverfly -version ${{ env.ASSERT_VERSION }}
             hoverctl version  ${{ env.ASSERT_VERSION }}
