@@ -24,7 +24,7 @@ jobs:
       - uses: agilepathway/label-checker@v1.0.9
 
       # update the version in the devcontainer `Dockerfile` manually, too
-      - uses: koalaman/shellcheck@v0.7.1
+      - uses: koalaman/shellcheck@v0.10.0
 
       # update the version in `github_tag_and_release.yml` manually, too
       - uses: golang/go@go1.15
