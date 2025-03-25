@@ -15,7 +15,7 @@ jobs:
 
       # update the version manually in these places, too:
       #   - the default version in `action.yml`
-      #   - the example version in the README
+      #   - the example versions in the README (3 places)
       #   - the latest version in the 'test.yml'
       - uses: SpectoLabs/hoverfly@v1.11.0
 
