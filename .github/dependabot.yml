@@ -11,6 +11,10 @@ updates:
     schedule:
       # Check for updates to GitHub Actions every weekday
       interval: "daily"
+    ignore:
+      # ignore all Go patch updates
+      - dependency-name: "golang/go"
+        update-types: ["version-update:semver-patch"]
     labels:
       - "dependencies"
       - "patch"
