@@ -31,7 +31,7 @@ jobs:
     - name: Install Hoverfly
       uses: SpectoLabs/hoverfly-github-action@main
       with:
-        version: v1.11.0
+        version: v1.11.1
         runner_github_workspace_path: ${{ github.workspace }}
 ```
 
@@ -55,7 +55,7 @@ jobs:
     - name: Install Hoverfly
       uses: SpectoLabs/hoverfly-github-action@main
       with:
-        version: v1.11.0
+        version: v1.11.1
         runner_github_workspace_path: ${{ github.workspace }}
     - name: Run Tests
         run: <command-to-run-your-tests>
@@ -78,7 +78,7 @@ Example:
     - name: Install Hoverfly
       uses: SpectoLabs/hoverfly-github-action@main
       with:
-        version: v1.11.0
+        version: v1.11.1
         runner_github_workspace_path: ${{ github.workspace }}
 ```
 
