@@ -18,5 +18,3 @@ updates:
     labels:
       - "dependencies"
       - "patch"
-    reviewers:
-      - "johnboyes"
