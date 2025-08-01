@@ -11,7 +11,7 @@ inputs:
       Can be any released Hoverfly version:
       https://github.com/SpectoLabs/hoverfly/releases
       Defaults to the latest version.
-    default: 'v1.11.2'
+    default: 'v1.11.3'
     required: false
   runner_github_workspace_path:
     description: >
