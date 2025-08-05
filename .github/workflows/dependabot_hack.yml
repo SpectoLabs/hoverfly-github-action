@@ -23,12 +23,5 @@ jobs:
       # (eventually Dependabot will do this automatically and I won't need this hack)
       - uses: agilepathway/label-checker@v1.6.65
 
-      # update the version in the devcontainer `Dockerfile` manually, too
-      - uses: koalaman/shellcheck@v0.10.0
-
       # update the version in `github_tag_and_release.yml` manually, too
       - uses: golang/go@go1.24
-
-      # update the variant version in the devcontainer.json manually, too
-      # (see ../DEPENDENCIES.md#devcontainer-base-image-version for more info )
-      - uses: microsoft/vscode-dev-containers@v0.245.2
