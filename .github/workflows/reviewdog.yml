@@ -40,7 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
       - name: shellcheck
-        uses: reviewdog/action-shellcheck@v1.30.0
+        uses: reviewdog/action-shellcheck@v1.31.0
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
