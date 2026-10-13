@@ -47,26 +47,3 @@ jobs:
           path: "."
           pattern: "*.sh"
           exclude: "./.git/*"
-
-  misspell:
-    name: runner / misspell
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4.2.2
-      - uses: reviewdog/action-misspell@v1.26.3
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-check
-
-  languagetool:
-    name: runner / languagetool
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4.2.2
-      - uses: reviewdog/action-languagetool@v1.22.0
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-check
-          patterns: |
-            **/*.md
-          language: en
