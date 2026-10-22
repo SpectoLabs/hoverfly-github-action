@@ -24,4 +24,4 @@ jobs:
       - uses: agilepathway/label-checker@v2.0.5
 
       # update the version in `github_tag_and_release.yml` manually, too
-      - uses: golang/go@go1.27.2
+      - uses: golang/go@go1.27.3
