@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7.0.1
       - name: yamllint
-        uses: reviewdog/action-yamllint@v1.25.1
+        uses: reviewdog/action-yamllint@v1.25.4
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
